@@ -1,0 +1,37 @@
+# Journal badges on the publications page: the key is the `abbr` field in papers.bib.
+"Science":
+  url: https://www.science.org/journal/science
+"Nat Commun":
+  url: https://www.nature.com/ncomms/
+"Curr Biol":
+  url: https://www.cell.com/current-biology/home
+"iScience":
+  url: https://www.cell.com/iscience/home
+"Ecol Evol":
+  url: https://onlinelibrary.wiley.com/journal/20457758
+"eLife":
+  url: https://elifesciences.org/
+"Proc R Soc B":
+  url: https://royalsocietypublishing.org/journal/rspb
+"Sci Rep":
+  url: https://www.nature.com/srep/
+"Mar Biol":
+  url: https://link.springer.com/journal/227
+"Mov Ecol":
+  url: https://movementecologyjournal.biomedcentral.com/
+"Front Ecol Evol":
+  url: https://www.frontiersin.org/journals/ecology-and-evolution
+"Ethology":
+  url: https://onlinelibrary.wiley.com/journal/14390310
+"Funct Ecol":
+  url: https://besjournals.onlinelibrary.wiley.com/journal/13652435
+"Ecography":
+  url: https://onlinelibrary.wiley.com/journal/16000587
+"Seabird":
+  url: https://www.seabirdgroup.org.uk/seabird-journal
+"Eur J Wildl Res":
+  url: https://link.springer.com/journal/10344
+"Behav Ecol Sociobiol":
+  url: https://link.springer.com/journal/265
+"PLoS ONE":
+  url: https://journals.plos.org/plosone/

@@ -1,0 +1,54 @@
+# Not rendered yet: the /cv/ page is a hand-written summary plus the PDF (_pages/cv.md).
+# This file is the RenderCV source for a possible later switch to a generated CV
+# (set `cv_format: rendercv` and `layout: cv` in _pages/cv.md). Keep it minimal until then.
+cv:
+  name: Paolo Becciu
+  label: Movement ecologist
+  email: paolo.becciu@vogelwarte.ch
+  location: Sempach, Switzerland
+  image: ""
+  summary: Postdoctoral researcher in behavioural and movement ecology at the Swiss Ornithological Institute.
+
+  social_networks:
+    - network: ORCID
+      username: 0000-0003-2145-6667
+    - network: GitHub
+      username: paolobecciu
+
+  sections:
+    Experience:
+      - company: Swiss Ornithological Institute
+        position: Postdoctoral researcher, Ecological Research Unit
+        location: Sempach, Switzerland
+        start_date: 2025-05
+        end_date: present
+      - company: University of Lausanne
+        position: Postdoctoral researcher, Barn Owl Research Group
+        location: Lausanne, Switzerland
+        start_date: 2020-09
+        end_date: 2025-04
+      - company: Max Planck Institute of Animal Behavior and University of Konstanz
+        position: Visiting PhD candidate
+        location: Konstanz, Germany
+        start_date: 2019-10
+        end_date: 2020-06
+
+    Education:
+      - institution: University of Haifa
+        location: Haifa, Israel
+        area: Behavioural Ecology
+        studyType: PhD
+        start_date: 2015-10
+        end_date: 2020-07
+      - institution: University of Turin
+        location: Turin, Italy
+        area: Evolution of Animal and Human Behaviour
+        studyType: MSc
+        start_date: 2012
+        end_date: 2014
+      - institution: Sapienza University of Rome
+        location: Rome, Italy
+        area: Natural Sciences
+        studyType: BSc
+        start_date: 2008
+        end_date: 2012

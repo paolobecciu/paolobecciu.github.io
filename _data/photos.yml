@@ -1,0 +1,65 @@
+# Photography page. A photo is shown only when its file exists in assets/img/photos/ AND
+# neither caption nor alt contains "TODO", so the list can be filled in gradually.
+# Every photo needs a caption: species, place, year.
+# `alt` is read aloud by screen readers; describe what is in the picture.
+birds:
+  - file: penguin2.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+  - file: gulls-2.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+  - file: spoonbills.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+  - file: terns-3.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+  - file: stilt2.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+  - file: kea-3.jpg
+    caption: "Kea (Nestor notabilis), New Zealand. TODO: place, year"
+    alt: "A kea, an olive-green mountain parrot"
+  - file: king.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+  - file: penguin1.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+  - file: blackstart.jpg
+    caption: "Blackstart (Oenanthe melanura). TODO: place, year"
+    alt: "A blackstart, a small grey bird with a black tail"
+  - file: bluethroat.jpg
+    caption: "Bluethroat (Luscinia svecica). TODO: place, year"
+    alt: "A bluethroat with its blue throat patch"
+  - file: kea-10.jpg
+    caption: "Kea (Nestor notabilis), New Zealand. TODO: place, year"
+    alt: "A kea, an olive-green mountain parrot"
+wildlife:
+  - file: salamander.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+  - file: sealion_pups-1.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+  - file: gazel-1.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+plants:
+  - file: flowers.jpg
+    caption: "TODO: species, place, year"
+    alt: "TODO"
+  - file: proteaking.jpg
+    caption: "King protea (Protea cynaroides). TODO: place, year"
+    alt: "A king protea flower"
+landscapes:
+  - file: autumn-cz-1.jpg
+    caption: "Autumn, Czech Republic. TODO: place, year"
+    alt: "TODO"
+  - file: autumn-cz-2.jpg
+    caption: "Autumn, Czech Republic. TODO: place, year"
+    alt: "TODO"
+  - file: wildsa.jpg
+    caption: "TODO: place, year"
+    alt: "TODO"

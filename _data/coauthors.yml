@@ -1,0 +1,3 @@
+# Optional: link co-author names on the publications page.
+# Format: "lastname": [{firstname: ["First", "F."], url: https://...}]
+{}

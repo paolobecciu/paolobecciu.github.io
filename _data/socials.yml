@@ -1,0 +1,11 @@
+# Contact and profile links, shown as icons on the home page and in search.
+# Order here = order on the page. Keys: https://github.com/george-gca/jekyll-socials
+email: paolo.becciu@vogelwarte.ch
+cv_pdf: /assets/pdf/cv.pdf # always overwrite this one file; never upload dated filenames
+orcid_id: 0000-0003-2145-6667
+scholar_userid: 5OyC7soAAAAJ
+research_gate_profile: Paolo-Becciu
+bluesky_url: https://bsky.app/profile/pbecciu.bsky.social
+github_username: paolobecciu
+linkedin_username: paolo-becciu-638b7863
+work_url: https://www.vogelwarte.ch/en/team/paolo-becciu/

@@ -1,0 +1,28 @@
+# Upcoming events, listed on the home page above the news, soonest first.
+# An event shows until its end date has passed. That is checked at each build, and the
+# deploy workflow also rebuilds weekly, so past events drop off without a push.
+#
+# Fields per event:
+#   start  first day (YYYY-MM-DD)
+#   end    last day; same as start for a one-day event
+#   title  name of the meeting or seminar
+#   place  city, country
+#   link   optional: event web page
+#   note   optional: what you are doing there (Markdown links allowed)
+
+- start: 2026-11-30
+  end: 2026-12-05
+  title: 29th International Ornithological Congress
+  place: Mérida, Mexico
+  note: oral presentation on the comparative [natal dispersal project](/research/natal-dispersal/)
+
+- start: 2027-04-23
+  end: 2027-04-23
+  title: Invited online seminar, University of Tuscia seminar series
+  place: Viterbo, Italy
+
+- start: 2027-05-30
+  end: 2027-06-04
+  title: Movement Ecology of Animals Gordon Research Conference
+  place: Il Ciocco, Barga (Lucca), Italy
+  link: https://www.grc.org/movement-ecology-of-animals-conference/2027

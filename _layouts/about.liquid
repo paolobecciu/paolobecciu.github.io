@@ -1,0 +1,129 @@
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
+        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+        {{ site.last_name }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+
+  <article>
+    {% if page.profile %}
+      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1
+      rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw"{% endcapture %}
+          {% assign profile_image_alt = page.profile.image_alt | default: page.profile.image %}
+          {%
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile_image_alt
+            cache_bust=true
+          %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="clearfix">{{ content }}</div>
+
+    <!-- Upcoming events (local addition): _data/upcoming.yml, only events not over at build time -->
+    {% if page.upcoming_events and site.data.upcoming %}
+      {% assign today = site.time | date: '%Y-%m-%d' %}
+      {% assign upcoming_sorted = site.data.upcoming | sort: 'start' %}
+      {% capture upcoming_rows %}
+        {% for ev in upcoming_sorted %}
+          {% assign ev_end = ev.end | default: ev.start | date: '%Y-%m-%d' %}
+          {% if ev_end >= today %}
+            {% assign ev_start = ev.start | date: '%Y-%m-%d' %}
+            {% assign start_year = ev_start | slice: 0, 4 %}
+            {% assign end_year = ev_end | slice: 0, 4 %}
+            {% assign start_month = ev_start | slice: 0, 7 %}
+            {% assign end_month = ev_end | slice: 0, 7 %}
+            {% if ev_start == ev_end %}
+              {% assign ev_dates = ev.start | date: '%-d %b %Y' %}
+            {% elsif start_month == end_month %}
+              {% capture ev_dates %}{{ ev.start | date: '%-d' }}–{{ ev_end | date: '%-d %b %Y' }}{% endcapture %}
+            {% elsif start_year == end_year %}
+              {% capture ev_dates %}{{ ev.start | date: '%-d %b' }} – {{ ev_end | date: '%-d %b %Y' }}{% endcapture %}
+            {% else %}
+              {% capture ev_dates %}{{ ev.start | date: '%-d %b %Y' }} – {{ ev_end | date: '%-d %b %Y' }}{% endcapture %}
+            {% endif %}
+            <tr>
+              <th scope="row" style="width: 20%">{{ ev_dates }}</th>
+              <td>
+                {% if ev.link %}<a href="{{ ev.link }}">{{ ev.title }}</a>{% else %}{{ ev.title }}{% endif %}, {{ ev.place }}
+                {%- if ev.note %}: {{ ev.note | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}
+              </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+      {% if upcoming_rows contains '<tr>' %}
+        <h2>upcoming events</h2>
+        <div class="news">
+          <div class="table-responsive">
+            <table class="table table-sm table-borderless">
+              {{ upcoming_rows }}
+            </table>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <!-- News -->
+    {% if page.announcements and page.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+      </h2>
+      {% include news.liquid limit=true %}
+    {% endif %}
+
+    <!-- Latest posts -->
+    {% if page.latest_posts and page.latest_posts.enabled %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+      </h2>
+      {% include latest_posts.liquid %}
+    {% endif %}
+
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+      </h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+
+    <!-- Social -->
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% social_links %}</div>
+
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% if site.plugins contains 'al_newsletter' %}
+        {% include plugins/al_newsletter_form_center_margin.liquid %}
+      {% else %}
+        {% include newsletter.liquid center=true %}
+      {% endif %}
+    {% endif %}
+  </article>
+</div>
