@@ -5,7 +5,7 @@ title: teaching & mentoring
 description: Students I have supervised, courses I have taught, and editorial service.
 nav: true
 nav_order: 4
-published: false # removed from the site; file and _data/mentees.yml kept for later
+published: false # removed from the site; file kept for reference (its supervision table read a data file that no longer exists)
 ---
 
 <!-- TODO: two sentences on how you supervise and what kinds of projects you can host. -->

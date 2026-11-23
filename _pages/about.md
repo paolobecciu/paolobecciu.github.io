@@ -25,7 +25,7 @@ latest_posts:
 
 I study how young birds move after leaving the nest, and whether and how these movements differ with individual traits, species traits and phylogeny. At the Swiss Ornithological Institute I lead a [global comparative study of natal dispersal](/research/natal-dispersal/), pooling juvenile tracking data across species and research teams to find the ecological, morphological and phylogenetic drivers of how birds disperse.
 
-My next aim is to move from describing dispersal to predicting it: inferring young birds' movement decisions from tracks that end before settlement, and testing how far those decision rules carry over to related species that have never been tracked. This builds on my earlier tracking work on [barn owls](/research/barn-owls/), [soaring migrants](/research/flight-and-migration/) and [seabirds](/research/seabird-conservation/), with GPS-accelerometers, radar and acoustic recorders.
+My next aim is to move from describing dispersal to predicting it: forecasting where young birds will settle, in today's landscapes and under future scenarios of land-use and climate change, and extending those forecasts to species we cannot track. This builds on my earlier tracking work on [barn owls](/research/barn-owls/), [soaring migrants](/research/flight-and-migration/) and [seabirds](/research/seabird-conservation/), with GPS-accelerometers, radar and acoustic recorders.
 
 I am an Associate Editor of the [_New Zealand Journal of Zoology_](https://rsnz.onlinelibrary.wiley.com/journal/11758821).
 

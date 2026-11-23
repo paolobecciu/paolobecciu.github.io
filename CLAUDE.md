@@ -17,7 +17,6 @@ npm ci                         # Prettier only
 bundle exec jekyll serve       # preview at http://localhost:4000/  (baseurl is empty)
 bundle exec jekyll build       # production-style build into _site/
 npx prettier . --check         # formatting, as CI expects
-bash bin/fetch-wordpress-media.sh   # one-off: pull images/PDFs from the old WordPress site
 ```
 
 ImageMagick (`convert` / `magick`) must be on PATH for the build (responsive images).
@@ -41,7 +40,7 @@ Verify changes in one of two ways:
 | Research pages           | `_projects/*.md` → `/research/<name>/`, ordered by `importance` |
 | News items               | `_news/*.md` (newest five appear on the home page)              |
 | Upcoming events          | `_data/upcoming.yml` (home page, until each event's end date)   |
-| Mentees table            | `_data/mentees.yml`                                             |
+
 | Photography              | `_data/photos.yml` + files in `assets/img/photos/`              |
 | Contact / social icons   | `_data/socials.yml`                                             |
 | Journal badges           | `_data/venues.yml` (key = `abbr` in papers.bib)                 |

@@ -30,8 +30,10 @@ through GitHub Actions; in the repository's **Settings → Pages**, the source m
 
 ## Migration status
 
-- [ ] `bash bin/fetch-wordpress-media.sh` run and images committed
-- [ ] Referee-free `assets/pdf/cv.pdf` added
-- [ ] `TODO` comments resolved (`grep -rn TODO _pages _projects _news _data`)
-- [ ] Google Scholar ID in `_data/socials.yml`
+- [x] Images and PDFs from the old WordPress site committed
+- [x] CV PDF at `assets/pdf/cv.pdf`
+- [x] Google Scholar ID in `_data/socials.yml`
+- [x] Site public at [paolobecciu.github.io](https://paolobecciu.github.io)
+- [ ] `TODO` comments resolved (`grep -rn TODO _pages _projects _news _data`): research-card
+  photos and photography captions remain
 - [ ] Domain cutover: `CNAME`, `url:` in `_config.yml`, DNS, HTTPS
