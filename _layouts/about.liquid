@@ -1,6 +1,18 @@
 ---
 layout: default
 ---
+<!-- Home banner (local addition): page.banner.image and page.banner.alt in the front matter; edge to edge, at most 420 px tall -->
+{% if page.banner and page.banner.image %}
+  <style>
+    body { overflow-x: clip; }
+    .home-banner { width: 100vw; margin-left: calc(50% - 50vw); margin-bottom: 2rem; }
+    .home-banner figure { margin: 0; }
+    .home-banner img { display: block; width: 100%; height: auto; max-height: 420px; object-fit: cover; object-position: center 45%; }
+  </style>
+  <div class="home-banner">
+    {% include figure.liquid loading="eager" path=page.banner.image sizes="100vw" alt=page.banner.alt %}
+  </div>
+{% endif %}
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">

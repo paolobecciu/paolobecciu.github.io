@@ -4,6 +4,10 @@ title: about
 permalink: /
 subtitle: Movement ecologist · <a href="https://www.vogelwarte.ch/en/">Swiss Ornithological Institute</a>
 
+banner: # full-width photo above the name (needs the local _layouts/about.liquid override)
+  image: assets/img/research/cormorants.jpg
+  alt: Cape cormorants on the cliffs of the Cape of Good Hope, South Africa
+
 profile:
   align: right
   image: prof_pic.jpg

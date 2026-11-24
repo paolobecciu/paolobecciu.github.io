@@ -75,7 +75,8 @@ Verify changes in one of two ways:
 - `_layouts/`, `_includes/`, `_sass/` hold only deliberate local overrides, each recorded in
   `.al-folio-overrides.yml` (so far `_includes/news.liquid`: month-and-year news dates;
   `_includes/footer.liquid`: "© year name" only; `_layouts/about.liquid`: portrait alt text
-  from `profile.image_alt` and the "upcoming events" list above the news). Other layout
+  from `profile.image_alt`, the "upcoming events" list above the news, and the edge-to-edge
+  home banner from `banner.image` / `banner.alt`). Other layout
   changes belong in the al-folio gems or in a new deliberate override; after any change run
   `bundle exec al-folio upgrade overrides audit` and `... overrides accept <path>`.
 - `Gemfile` and `_config.yml` `plugins:` must list the same plugins.
