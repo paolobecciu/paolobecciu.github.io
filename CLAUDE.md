@@ -76,7 +76,8 @@ Verify changes in one of two ways:
   `.al-folio-overrides.yml` (so far `_includes/news.liquid`: month-and-year news dates;
   `_includes/footer.liquid`: "© year name" only; `_layouts/about.liquid`: portrait alt text
   from `profile.image_alt`, the "upcoming events" list above the news, and the edge-to-edge
-  home banner from `banner.image` / `banner.alt`). Other layout
+  home banner from `banner.image` / `banner.alt`; `_sass/_themes.scss`: Linosa teal accent
+  `#0b7a75` / dark `#4dc2b9`, dark text on journal badges in dark mode). Other layout
   changes belong in the al-folio gems or in a new deliberate override; after any change run
   `bundle exec al-folio upgrade overrides audit` and `... overrides accept <path>`.
 - `Gemfile` and `_config.yml` `plugins:` must list the same plugins.
