@@ -28,11 +28,24 @@ map: true # loads Leaflet for the map of places below the cards
   {% endif %}
 </div>
 
+
 ## Where I have worked
 
 <!-- Map points live in the list below. Coordinates are rounded to 0.1° (about 10 km) and
-     never mark nests or colonies. The basemap has no place labels; never name a country
-     for the Haifa point. -->
+     never mark nests or colonies. The land outline (assets/data/land-110m.json, Natural Earth,
+     public domain) carries no place names; never name a country for the Haifa point. -->
+<style>
+  #places-map { background: color-mix(in srgb, var(--global-theme-color) 9%, var(--global-bg-color)); }
+  #places-map .land { fill: color-mix(in srgb, var(--global-text-color) 16%, var(--global-bg-color)); fill-opacity: 1; stroke: none; }
+  #places-map .place { fill: var(--global-theme-color); stroke: var(--global-bg-color); }
+  #places-map .leaflet-popup-content-wrapper, #places-map .leaflet-popup-tip, #places-map .leaflet-tooltip,
+  #places-map .leaflet-bar a, #places-map .leaflet-control-attribution {
+    background: var(--global-card-bg-color); color: var(--global-text-color); border-color: var(--global-divider-color);
+  }
+  #places-map .leaflet-tooltip-top:before { border-top-color: var(--global-card-bg-color); }
+  #places-map a, #places-map .leaflet-control-attribution a { color: var(--global-theme-color); }
+  #places-map .leaflet-popup-close-button { color: var(--global-text-color-light); }
+</style>
 <div id="places-map" class="map rounded z-depth-1" role="region" aria-label="Map of places where I have done fieldwork and research"></div>
 <noscript><p>The map needs JavaScript. The places are listed on each research page.</p></noscript>
 
@@ -57,34 +70,24 @@ map: true # loads Leaflet for the map of places below the cards
       { name: "Isla Lobos de Tierra, Peru", lat: -6.4, lon: -80.9, text: "Fieldwork for Zavalaga et al. 2011, PLoS ONE", page: seabirds },
     ];
 
-    var root = document.documentElement;
-    var accent = function () {
-      return getComputedStyle(root).getPropertyValue("--global-theme-color").trim() || "#0b7a75";
-    };
-    var tileUrl = function () {
-      var dark = root.getAttribute("data-theme") === "dark";
-      // Esri grey canvas without the reference (labels) layer, so no place names appear
-      return "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_" + (dark ? "Dark" : "Light") + "_Gray_Base/MapServer/tile/{z}/{y}/{x}";
-    };
-
-    var map = L.map("places-map", { scrollWheelZoom: false, worldCopyJump: true });
-    var tiles = L.tileLayer(tileUrl(), {
-      maxZoom: 10,
-      attribution: "Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ",
-    }).addTo(map);
+    var map = L.map("places-map", { scrollWheelZoom: false, minZoom: 1, maxZoom: 6, zoomSnap: 0.25 });
+    map.attributionControl.addAttribution('Land: <a href="https://www.naturalearthdata.com/">Natural Earth</a>');
 
     var markers = places.map(function (p) {
       var popup = "<strong>" + p.name + "</strong>" + (p.text ? "<br>" + p.text : "") + '<br><a href="' + p.page.url + '">' + p.page.title + "</a>";
-      return L.circleMarker([p.lat, p.lon], { radius: 7, weight: 2, color: "#ffffff", fillColor: accent(), fillOpacity: 0.9 })
+      return L.circleMarker([p.lat, p.lon], { radius: 7, weight: 2, fillOpacity: 0.95, className: "place" })
         .bindTooltip(p.name)
-        .bindPopup(popup)
-        .addTo(map);
+        .bindPopup(popup);
     });
-    map.fitBounds(L.featureGroup(markers).getBounds(), { padding: [25, 25] });
+    var group = L.featureGroup(markers);
+    map.fitBounds(group.getBounds(), { padding: [25, 25] });
 
-    new MutationObserver(function () {
-      tiles.setUrl(tileUrl());
-      markers.forEach(function (m) { m.setStyle({ fillColor: accent() }); });
-    }).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+    fetch("/assets/data/land-110m.json")
+      .then(function (r) { return r.json(); })
+      .then(function (land) {
+        L.geoJSON(land, { interactive: false, style: { className: "land" } }).addTo(map);
+      })
+      .catch(function () {})
+      .finally(function () { group.addTo(map); });
   });
 </script>
