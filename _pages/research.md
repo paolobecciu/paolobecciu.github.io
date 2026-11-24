@@ -43,6 +43,9 @@ map: true # loads Leaflet for the map of places below the cards
     background: var(--global-card-bg-color); color: var(--global-text-color); border-color: var(--global-divider-color);
   }
   #places-map .leaflet-tooltip-top:before { border-top-color: var(--global-card-bg-color); }
+  #places-map .leaflet-tooltip-bottom:before { border-bottom-color: var(--global-card-bg-color); }
+  #places-map .leaflet-tooltip-left:before { border-left-color: var(--global-card-bg-color); }
+  #places-map .leaflet-tooltip-right:before { border-right-color: var(--global-card-bg-color); }
   #places-map a, #places-map .leaflet-control-attribution a { color: var(--global-theme-color); }
   #places-map .leaflet-popup-close-button { color: var(--global-text-color-light); }
 </style>
