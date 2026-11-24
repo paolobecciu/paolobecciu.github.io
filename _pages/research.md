@@ -63,14 +63,14 @@ map: true # loads Leaflet for the map of places below the cards
     };
     var tileUrl = function () {
       var dark = root.getAttribute("data-theme") === "dark";
-      return "https://{s}.basemaps.cartocdn.com/" + (dark ? "dark_nolabels" : "light_nolabels") + "/{z}/{x}/{y}{r}.png";
+      // Esri grey canvas without the reference (labels) layer, so no place names appear
+      return "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_" + (dark ? "Dark" : "Light") + "_Gray_Base/MapServer/tile/{z}/{y}/{x}";
     };
 
     var map = L.map("places-map", { scrollWheelZoom: false, worldCopyJump: true });
     var tiles = L.tileLayer(tileUrl(), {
       maxZoom: 10,
-      subdomains: "abcd",
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      attribution: "Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ",
     }).addTo(map);
 
     var markers = places.map(function (p) {
