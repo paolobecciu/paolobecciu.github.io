@@ -14,3 +14,5 @@ https://www.reddit.com/
 README.md
 docs/SEO.md
 docs/SHOWCASE.md
+# Bluesky post identifiers in embed blockquotes (data-bluesky-uri), not links
+at:/+did:plc:
