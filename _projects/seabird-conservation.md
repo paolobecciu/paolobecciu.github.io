@@ -3,7 +3,7 @@ layout: page
 title: Seabird monitoring and conservation
 description: Following threatened seabirds at sea and at their colonies, from the Mediterranean to the Atlantic and Pacific.
 importance: 4
-# img: assets/img/research/seabirds.jpg # TODO: the research card still needs a wide (landscape) photo; bermuda-cahow.jpg is portrait and is used in the text
+# img: assets/img/research/seabirds.jpg # TODO: the research card still needs a wide (landscape) photo; bermuda-cahow.jpg and paolo_bermuda.jpg are portrait
 ---
 
 **Status:** Scopoli's shearwater, Linosa, 2010–2020, ongoing collaboration; Bermuda petrel project 2023–2024; Galápagos petrel fieldwork 2024

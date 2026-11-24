@@ -3,7 +3,7 @@ layout: page
 title: Flight and migration
 description: How do flying migrants handle wind, uplift and open sea? Radar and GPS tracking of soaring birds across the Mediterranean and worldwide.
 importance: 3
-# img: assets/img/research/flight.jpg # TODO: one field photo (e.g. buzzardsa-2.jpg from the old site)
+img: assets/img/research/buzzard_sa.jpg
 ---
 
 **Status:** PhD work 2015–2020 at the University of Haifa, with ongoing collaborations
