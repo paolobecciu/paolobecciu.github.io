@@ -37,3 +37,11 @@ through GitHub Actions; in the repository's **Settings → Pages**, the source m
 - [ ] `TODO` comments resolved (`grep -rn TODO _pages _projects _news _data`): research-card
   photos and photography captions remain
 - [ ] Domain cutover: `CNAME`, `url:` in `_config.yml`, DNS, HTTPS
+
+## After the conference
+
+- [ ] Animated-tracks video made in R, from openly published data only
+- [ ] Photography captions and alt text in `_data/photos.yml`, so the page can return to the menu
+  (`nav: true` in `_pages/photography.md`)
+- [ ] Higher-resolution cormorant banner (replace `assets/img/research/cormorants.jpg` with the
+  full-resolution original)
